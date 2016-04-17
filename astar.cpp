@@ -72,11 +72,11 @@ int main(void)
 			cin >> grid[i*c + j]->value;
 			grid[i*c + j]->curX = i;
 			grid[i*c + j]->curY = j;
-            if(grid[i*c + j]->value == '-')
-            {
-                grid[i*c + j]->hstic = fabs(foodX-i)+fabs(foodY-j);
+            		if(grid[i*c + j]->value == '-')
+            		{
+                		grid[i*c + j]->hstic = fabs(foodX-i)+fabs(foodY-j);
  
-            }
+            		}
 		}
 	}   
     
@@ -106,31 +106,31 @@ int main(void)
         }
         
         for(int l=0; l < 4; l++)
-	    {
-		   //up
-		   if(l==0)
-		   {
-               ynext=ycoord-1;
-		       xnext=xcoord;
-           }
-           //left		
-           if(l==1)
-	       {
-               ynext=ycoord;
-		       xnext=xcoord-1;
-		   }
-           //right		
-           if(l==2)
-		   {
-               ynext=ycoord;
-               xnext=xcoord+1;
-		   }
-           //down
-		   if(l==3)
-		   {
-               ynext=ycoord+1;
-               xnext=xcoord;
-		   }   
+	{
+		//up
+		if(l==0)
+		{
+                	ynext=ycoord-1;
+		        xnext=xcoord;
+           	}
+        	//left		
+        	if(l==1)
+	        {
+                	ynext=ycoord;
+		        xnext=xcoord-1;
+		}
+           	//right		
+           	if(l==2)
+		{
+                	ynext=ycoord;
+               		xnext=xcoord+1;
+		}
+           	//down
+		if(l==3)
+		{
+                	ynext=ycoord+1;
+                	xnext=xcoord;
+		}   
            if( grid[xnext*c+ynext]->value != '%' && find(closelst.begin(), closelst.end(), grid[xnext*c+ynext]) == closelst.end())
            {    
                grid[xnext*c+ynext]->parent = grid[xcoord*c+ycoord];
