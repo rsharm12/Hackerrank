@@ -96,31 +96,31 @@ int main(void)
        explored.push_back(grid[xcoord*c+ycoord]);
         
        for(int l=0; l < 4; l++)
-	   {
-		  //up
-		  if(l==0)
-		  {
-                ynext=ycoord-1;
-		        xnext=xcoord;
-          }
-          //left		
-          if(l==1)
-	      {
+       {
+	//up
+	if(l==0)
+	{
+        	ynext=ycoord-1;
+		xnext=xcoord;
+        }
+        //left		
+        if(l==1)
+	{
                 ynext=ycoord;
-		        xnext=xcoord-1;
-		  }
-           	//right		
-          if(l==2)
-		  {
+		xnext=xcoord-1;
+	}
+        //right		
+        if(l==2)
+	{
                 ynext=ycoord;
                	xnext=xcoord+1;
-		  }
+	}
           //down
-		  if(l==3)
-		  {
+	if(l==3)
+	{
                 ynext=ycoord+1;
                 xnext=xcoord;
-		  }   
+	}   
           if( grid[xnext*c+ynext]->value != '%'&& find(explored.begin(), explored.end(), grid[xnext*c+ynext]) == explored.end())
           {    
               grid[xnext*c+ynext]->parent = grid[xcoord*c+ycoord];
